@@ -1,0 +1,25 @@
+name: 'jacoco-report'
+description: 'Publish JaCoCo report as comment in the PR'
+inputs:
+  input-name:
+    description: 'TODO'
+    required: true
+outputs:
+  output-name:
+    description: 'TODO'
+    value: ${{ steps.filename-inspector.outputs.output-name }}
+
+branding:
+  icon: 'bookmark'
+  color: 'yellow'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Publish JaCoCo report as comment in the PR
+      id: jacoco-report
+      env:
+        INPUT_NAME: ${{ inputs.name }}
+      run: |
+        python ${{ github.action_path }}/jacoco-report/TODO.py
+      shell: bash
